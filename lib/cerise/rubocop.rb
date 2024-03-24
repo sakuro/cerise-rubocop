@@ -17,7 +17,7 @@ module Cerise
         loader.push_dir(root)
         loader.ignore(
           "#{root}/cerise-rubocop.rb",
-          "#{root}/cerise/rubocop/{rake_tasks,version}.rb"
+          "#{root}/cerise/rubocop/{commands/install,rake_tasks,version}.rb"
         )
         loader.inflector.inflect("rubocop" => "RuboCop")
       end
@@ -28,6 +28,9 @@ module Cerise
 
     require_relative "rubocop/version"
 
+    require_relative "rubocop/commands/install"
     require_relative "rubocop/rake_tasks"
+
+    Hanami::CLI.after "install", Commands::Install if Hanami::CLI.within_hanami_app?
   end
 end

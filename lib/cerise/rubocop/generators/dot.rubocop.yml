@@ -1,0 +1,8 @@
+inherit_from:
+  # - .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: <%= RUBY_VERSION.split(".")[0, 2].join(".") %>
+  Exclude:
+    - bin/**/*
+    - vendor/**/*

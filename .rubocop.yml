@@ -30,6 +30,13 @@ Naming/FileName:
   Exclude:
     - 'lib/cerise-rubocop.rb'
 
+Naming/MethodParameterName:
+  AllowedNames:
+    - fs
+
+RSpec/ExampleLength:
+  Max: 10
+
 Style/DisableCopsWithinSourceCodeDirective:
   AllowedCops:
     - Metrics/MethodLength

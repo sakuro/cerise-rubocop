@@ -14,11 +14,16 @@ end
 
 ## Usage
 
+`$ hanami install` will copies initial RuboCop configuration files.
+
+- .rubocop - default command line options
+- .rubocop.yml - configuration in YAML
+
 This gem defines following Rake tasks provided by RuboCop.
 
-- rubocop # Run RuboCop
-- rubocop:autocorrect # Autocorrect RuboCop offenses (only when it's safe)
-- rubocop:autocorrect:all # Autocorrect RuboCop offenses (safe and unsafe)
+- rubocop - Run RuboCop
+- rubocop:autocorrect - Autocorrect RuboCop offenses (only when it's safe)
+- rubocop:autocorrect:all - Autocorrect RuboCop offenses (safe and unsafe)
 
 ## License
 
