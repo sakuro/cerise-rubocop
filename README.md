@@ -14,7 +14,7 @@ end
 
 ## Usage
 
-`$ hanami install` will copies initial RuboCop configuration files.
+`$ hanami install` will copy initial RuboCop configuration files.
 
 - .rubocop - default command line options
 - .rubocop.yml - configuration in YAML
