@@ -5,16 +5,11 @@ inherit_from:
   - .rubocop/lint.yml
   - .rubocop/metrics.yml
   - .rubocop/naming.yml
-  - .rubocop/performance.yml
   - .rubocop/rspec.yml
   - .rubocop/security.yml
   - .rubocop/style.yml
-  - .rubocop_todo.yml
 
 require:
-  - rubocop-capybara
-  - rubocop-factory_bot
-  - rubocop-performance
   - rubocop-rake
   - rubocop-rspec
 
@@ -25,5 +20,20 @@ AllCops:
     - bin/**/*
     - vendor/**/*
     - spec/spec_helper.rb
-    - spec/support/rspec.rb
     - "*.gemspec"
+
+Bundler/GemComment:
+  Exclude:
+    - 'Gemfile'
+
+Naming/FileName:
+  Exclude:
+    - 'lib/cerise-rubocop.rb'
+
+Style/DisableCopsWithinSourceCodeDirective:
+  AllowedCops:
+    - Metrics/MethodLength
+
+Style/DocumentationMethod:
+  Exclude:
+    - 'spec/**/*'

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe Cerise::Rubocop do
-  it "has a version number" do
-    expect(Cerise::Rubocop::VERSION).not_to be nil
-  end
+RSpec.describe Cerise::RuboCop do
+  it "defines Rake tasks for running RuboCop" do
+    # RuboCop::RakeTask also defines "rubocop:auto_correct" but it is already deprecated.
+    expected_tasks = %w[rubocop rubocop:autocorrect rubocop:autocorrect_all]
+    actual_tasks = Rake.application.tasks.map(&:name)
 
-  it "does something useful" do
-    expect(false).to eq(true)
+    expect(actual_tasks).to include(*expected_tasks)
   end
 end
